@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNetCore.Extensions" Version="17.50.0" />
+		<PackageReference Include="DotNetCore.Mediator" Version="17.50.0" />
+		<PackageReference Include="DotNetCore.Results" Version="17.50.0" />
+		<PackageReference Include="DotNetCore.Security" Version="17.50.0" />
+		<PackageReference Include="FluentValidation" Version="11.5.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\TestTask.Database\TestTask.Database.csproj" />
+		<ProjectReference Include="..\TestTask.Model\TestTask.Model.csproj" />
+	</ItemGroup>
+
+</Project>

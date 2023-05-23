@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+    web:
+        image: testtask/web
+        container_name: testtask_web
+        restart: always
+        build:
+            context: ..
+            dockerfile: ./.docker/dockerfile
+        environment:
+            - Authentication__Schemes__Bearer__SigningKeys__1__Issuer=Issuer
+            - Authentication__Schemes__Bearer__SigningKeys__1__Value=E9DB7E89123F52A9F2DB04EF04C7FE8874C737410EFCFE2277574F35ABD7A894
+            - Authentication__Schemes__Bearer__ValidAudience=Audience
+            - Authentication__Schemes__Bearer__ValidIssuer=Issuer
+            - ConnectionStrings__AppDbContext=Server=testtask_database;Database=TestTask;User Id=sa;Password=Password123!;TrustServerCertificate=true;
+        depends_on:
+            - database
+        networks:
+            - network
+        ports:
+            - 4210:80
+    database:
+        image: mcr.microsoft.com/mssql/server
+        container_name: testtask_database
+        restart: always
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=Password123!
+        networks:
+            - network
+        ports:
+            - 1433:1433
+        volumes:
+            - database:/var/opt/mssql
+networks:
+    network:
+volumes:
+    database:
