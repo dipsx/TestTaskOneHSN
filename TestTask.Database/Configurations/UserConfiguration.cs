@@ -16,9 +16,7 @@ namespace TestTask.Database.Configurations {
 
             builder.HasIndex(entity => entity.Email).IsUnique();
 
-            builder.Property(entity => entity.PasswordHash).HasMaxLength(1000).IsRequired();
-
-            builder.Property(entity => entity.Roles).IsRequired();
+            builder.Property(entity => entity.Name).HasMaxLength(250).IsRequired();
         }
     }
 }

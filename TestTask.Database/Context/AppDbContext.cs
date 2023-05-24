@@ -6,6 +6,7 @@ namespace TestTask.Database;
 
 public sealed class AppDbContext : DbContext {
 
+    public DbSet<Auth> Auths { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Rectangle> Rectangles { get; set; }
 

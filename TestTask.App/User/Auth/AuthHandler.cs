@@ -32,20 +32,19 @@ public sealed record AuthHandler : IHandler<AuthRequest, AuthResponse> {
     public async Task<Result<AuthResponse>> HandleAsync(AuthRequest request) {
         var error = _resultService.Error<AuthResponse>("AuthError");
 
-        var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
+        var auth = await _context.Auths.FirstOrDefaultAsync(user => user.Login == request.Login);
 
-        if (user is null) return error;
+        if (auth is null) return error;
 
-        // temp salt
-        var passwordHash = _hashService.Create(request.Password, new Guid("79005744-e69a-4b09-996b-08fe0b70cbb9").ToString());
+        var passwordHash = _hashService.Create(request.Password, auth.Salt.ToString());
 
-        if (user.PasswordHash != passwordHash) return error;
+        if (auth.PasswordHash != passwordHash) return error;
 
         var claims = new List<Claim>();
 
-        claims.AddSub(user.Id.ToString());
+        claims.AddSub(auth.Id.ToString());
 
-        claims.AddRoles(user.Roles.ToArray());
+        claims.AddRoles(auth.Roles.ToArray());
 
         var token = _jwtService.Encode(claims);
 
