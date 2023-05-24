@@ -27,7 +27,7 @@ Before moving on to Bonus Point items, please make sure the Basic Requirements a
 
 ## Bonus Points
 - (-) Implement automated tests using tools of your choice.
-- (+-) Database makes use of indexes and foreign keys.
+- (+) Database makes use of indexes and foreign keys.
 - (+) Implement basic authentication of the caller of API.
 - (+) Any further design considerations assuming scaling this system and integrations with external consumers.
 - (+) Wrap the executable(s) into Docker container.
