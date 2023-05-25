@@ -19,7 +19,7 @@ Please push the code up into an accessible repository of your choice.
 Before moving on to Bonus Point items, please make sure the Basic Requirements are completed to your satisfaction.
 
 ## Basic Requirements
-- (+) Your application must:
+Your application must:
 - (+) Contain data seed methods to populate 200 rectangle data entries into database
 - (+) Each data entry (and therefore row(s)) must define rectangle coordinates and/or dimensions, upon your choice of design
 - (+) Define an endpoint that takes an array of coordinates upon your choice of design of input object
