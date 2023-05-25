@@ -2,9 +2,9 @@
 Test task from One Human Service Network (OneHSN)
 
 ## Credentionals
-email: administrator@administrator.com 
+login: admin
 
-pass: administrator
+pass: admin
 
 Back End Developer/.NET
 ## Overview
@@ -26,7 +26,7 @@ Before moving on to Bonus Point items, please make sure the Basic Requirements a
 - (+) For each passed coordinate, output a list of rectangles defined in database that this coordinate falls into
 
 ## Bonus Points
-- (-) Implement automated tests using tools of your choice.
+- (+) Implement automated tests using tools of your choice.
 - (+) Database makes use of indexes and foreign keys.
 - (+) Implement basic authentication of the caller of API.
 - (+) Any further design considerations assuming scaling this system and integrations with external consumers.
